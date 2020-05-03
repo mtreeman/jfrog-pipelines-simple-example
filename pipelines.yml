@@ -21,7 +21,7 @@ pipelines:
           affinityGroup: dockerGroup
           dockerFileLocation: .
           dockerFileName: Dockerfile
-          dockerImageName: 'pipe-master.jfrog.info:8081/docker-local/alpine37'
+          dockerImageName: 'kleinbonum-docker.jfrog.io/alpine'
           dockerImageTag: ${run_number}
           inputResources:
             - name: myGitRepo
@@ -32,7 +32,7 @@ pipelines:
         type: DockerPush
         configuration:
           affinityGroup: dockerGroup
-          targetRepository: docker-local
+          targetRepository: docker
           integrations:
             - name: art
           inputSteps:
